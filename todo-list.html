@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TodoList</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready((e) => {
+            $('.add_todo').keydown(function(e) {
+                if (e.key === 'Enter') {
+                    addTodo(e.target.value);
+                }
+            })
+            $('.btn_add').click(function(e){
+                addTodo($('.add_todo').val())
+            })
+
+
+            $('.todo_list').on('click', '.btn_mark', (e)=> {
+                const element = $(e.target)
+                const markToComplete = !element.parent().parent().hasClass('completed')
+                element.toggleClass('btn-outline-success').toggleClass('btn-outline-secondary')
+                element.text(markToComplete ? '未完成' : '已完成')
+                element.parent().parent().toggleClass('completed')
+                if(markToComplete) {
+                    element.parent().prepend('<span class="badge badge-success badge-pill p-2 mr-4">已完成<span>')
+                } else {
+                    element.parent().find('.badge').remove()
+                }
+            })
+
+            $('.todo_list').on('click', '.btn_remove', (e) => {
+                $(e.target).parent().parent().remove()
+            })
+
+            $('.filter_all').click(function() {
+                $('.filter').removeClass('active')
+                $(this).addClass('active')
+                $('.todo').show()
+            })
+
+            $('.filter_uncomplete').click(function() {
+                $('.filter').removeClass('active')
+                $(this).addClass('active')
+                $('.todo').show()
+                $('.completed').hide()
+            })
+            $('.filter_completed').click(function() {
+                $('.filter').removeClass('active')
+                $(this).addClass('active')
+                $('.todo').hide()
+                $('.completed').show()
+            })
+
+
+            function addTodo(value) {
+                const newTodo = getTodoHTML(value);
+                $('.add_todo').val('');
+                $('.todo_list').append(newTodo);
+            }
+            function getTodoHTML(value) {
+                return `
+                    <li class="list-group-item justify-content-between align-items-center todo" style="display: flex">
+                        ${value}
+                        <div>
+                            <div class="btn btn-outline-success btn_mark">已完成</div>
+                            <div class="btn btn-outline-danger btn_remove">刪除</div>
+                        </div>
+                    </li>`
+            }
+        })
+    </script>
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+        .card {
+            width: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .nav-pills {
+            border-bottom: solid 1px rgb(201, 201, 201);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h1>Todo List</h1>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control add_todo" placeholder="待辦事項" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary btn_add" type="button">新增</button>
+                    </div>
+                </div>
+                <ul class="nav nav-pills mb-1">
+                    <li class="nav-item">
+                        <a class="nav-link filter filter_all active" href="#">全部</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link filter filter_uncomplete" href="#">未完成</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link filter filter_completed" href="#">已完成</a>
+                    </li>
+                </ul>
+                <ul class="list-group todo_list">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
