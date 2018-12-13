@@ -10,7 +10,6 @@
         $content = $_POST['content'];
         $parent_id = $_POST['parent_id'];
 
-
         $stmt = $conn->prepare("INSERT INTO krisinc_comments (username, content, parent_id) VALUES (?, ?, ?)");
         $stmt->bind_param('ssi', $user, $content, $parent_id);
 
