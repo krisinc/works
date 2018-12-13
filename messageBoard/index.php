@@ -14,11 +14,15 @@
         src="https://code.jquery.com/jquery-1.12.4.min.js"
         integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
         crossorigin="anonymous"></script>
+<<<<<<< HEAD
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script src="./app.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+=======
+    <script src="./app.js"></script>
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
     <link rel="stylesheet" type="text/css" href="./style.css">
     <title>留言板</title>
 </head>
@@ -44,7 +48,11 @@
         $result = $stmt->get_result();
     ?>
     <div class="container">
+<<<<<<< HEAD
         <form name="add_comment" class="form" action="./add_comment.php" method="POST">
+=======
+        <form class="form" action="./add_comment.php" method="POST">
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
             <div class="form__row">
                 <h2>新增留言</h2>
             </div>
@@ -106,7 +114,11 @@
                             from krisinc_comments as c 
                             LEFT JOIN krisinc_users as u ON c.username = u.username 
                             WHERE c.parent_id = ? 
+<<<<<<< HEAD
                             ORDER BY created_at DESC";
+=======
+                            ORDER BY created_at ASC";
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
                         $stmt_sub = $conn->prepare($sql_sub);
                         $stmt_sub->bind_param('i', $parent_id);
                         $is_sub_success = $stmt_sub->execute();
@@ -128,15 +140,24 @@
                                 ?>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="comment__time sub-comment__time">發言時間：<?= $row_sub['created_at'] ?></div>
                         <div class="comment__content"><?= escape($row_sub['content']) ?></div>
+=======
+                        <div class="sub-comment__time">發言時間：<?= $row_sub['created_at'] ?></div>
+                        <div class="sub-comment__content"><?= escape($row_sub['content']) ?></div>
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
                     </div>
                     <?php
                             }
                         }
                     ?>
                     <div class="add-sub-comment">
+<<<<<<< HEAD
                         <form name="add_comment" action="./add_comment.php" method="POST">
+=======
+                        <form action="./add_comment.php" method="POST">
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
                             <div class="form__row">
                                 <h3>新增留言</h3>
                             </div>
@@ -144,7 +165,11 @@
                             <div class="form__row">
                                 內容: 
                                 <div>
+<<<<<<< HEAD
                                     <textarea class='form__content' placeholder='說什麼啦！' name='content' rows='6' cols='50'></textarea>
+=======
+                                    <textarea class='form__content' placeholder='說什麼啦！' name='content' rows='10' cols='50'></textarea>
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
                                 </div>
                             </div>
                             <?php if($user) { ?>

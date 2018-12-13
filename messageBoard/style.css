@@ -7,20 +7,29 @@
 body {
     background-color: #FCFAF9;
 }
+<<<<<<< HEAD
 ul {
     margin-bottom: 0;
 }
+=======
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
 .nav {
     z-index: 100;
     position: fixed;
     top: 0;
     background-color: #F3D3BD;
+<<<<<<< HEAD
     max-width: 100%;
+=======
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
     width: 100%;
     padding: 5px;
     display: flex;
     justify-content: space-between;
+<<<<<<< HEAD
     transition: all .2s;
+=======
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
 }
 .nav__list {
     list-style: none;
@@ -38,6 +47,10 @@ ul {
 .nav__item:active {
     top: 0;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
 .nav__item a {
     display: inline-block;
     font-size: 18px;
@@ -48,9 +61,20 @@ ul {
 
 .container {
     margin-top: 100px;
+<<<<<<< HEAD
     padding: 10px;
 }
 
+=======
+    width: 70%;
+    padding: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.container--small {
+    width: 50%;
+}
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
 
 .btn {
     color: #FCFAF9;
@@ -86,6 +110,7 @@ ul {
     resize: none;
 }
 
+<<<<<<< HEAD
 .edit__form {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -100,6 +125,8 @@ ul {
     background-color: rgb(118, 133, 112);
 }
 
+=======
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
 .comments {
     margin-top: 20px;
     width: 70%;
@@ -146,7 +173,13 @@ ul {
     border-bottom: solid 1px #F3D3BD;
     padding-bottom: 2px;
 }
+<<<<<<< HEAD
 
+=======
+.sub-comment__content {
+    margin: 10px 0px;
+}
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
 
 
 
@@ -193,6 +226,7 @@ ul {
 
 .page a {
     margin-left: 10px;
+<<<<<<< HEAD
 }
 
 @media(max-width: 576px) {
@@ -207,4 +241,6 @@ ul {
         width: 90%;
         height: 130px;
     }
+=======
+>>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
 }
