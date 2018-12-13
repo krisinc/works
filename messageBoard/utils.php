@@ -40,11 +40,7 @@
     function renderEditBtn($id) {
         return "
         <div class='edit-comment'>
-<<<<<<< HEAD
             <form name='edit__form' method='GET'>
-=======
-            <form method='GET' action='./edit_comment.php'>
->>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
                 <input type='hidden' name='id' value='$id'>
                 <input class='btn dele__btn' type='submit' value='EDIT'>
             </form>
@@ -54,11 +50,7 @@
     function renderEditBtnSub($id) {
         return "
         <div class='edit-comment'>
-<<<<<<< HEAD
             <form name='edit__form' method='GET'>
-=======
-            <form method='GET' action='./edit_comment.php'>
->>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
                 <input type='hidden' name='id' value='$id'>
                 <input class='btn dele__btn--sub' type='submit' value='EDIT'>
             </form>
