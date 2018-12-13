@@ -10,29 +10,17 @@ $(document).ready(function() {
             }
         }).done(function(response) {
             const msg = JSON.parse(response)
-<<<<<<< HEAD
             const subComment = $(e.target).closest('.sub-comment')
             if(subComment.length === 0) {
                 $(e.target).closest('.comment').hide(200)           
             } else {
                 subComment.hide(200)
-=======
-            const comment = $(e.target).parent().parent().parent()
-            if(comment.length === 0) {
-                comment.hide(200)            
-            } else {
-                comment.hide(200)
->>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
             }
         }).fail(function() {
             alert('delete fail!')
         })
     })
-<<<<<<< HEAD
     $('.container').on('submit', 'form[name="add_comment"]', function(e) {
-=======
-    $('form').submit(function(e) {
->>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
         e.preventDefault();
         const content = $(e.target).find('textarea[name=content]').val()
         const parentId = $(e.target).find('input[name=parent_id]').val()
@@ -55,11 +43,7 @@ $(document).ready(function() {
                             <div class='functional'>
                                 <div class='delete-comment btn dele__btn' data-id='${res.id}'>X</div>
                                 <div class='edit-comment'>
-<<<<<<< HEAD
                                     <form name='edit__form' method='GET'>
-=======
-                                    <form method='GET' action='./edit_comment.php'>
->>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
                                         <input type='hidden' name='id' value='${res.id}'>
                                         <input class='btn dele__btn' type='submit' value='EDIT'>
                                     </form>
@@ -70,11 +54,7 @@ $(document).ready(function() {
                         <div class="comment__content">${escapeHtml(content)}</div>
                         <div class="sub-comments">
                             <div class="add-sub-comment">
-<<<<<<< HEAD
                                 <form name="add_comment" action="./add_comment.php" method="POST">
-=======
-                                <form action="./add_comment.php" method="POST">
->>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
                                     <div class="form__row">
                                         <h3>新增留言</h3>
                                     </div>
@@ -82,11 +62,7 @@ $(document).ready(function() {
                                     <div class="form__row">
                                         內容: 
                                         <div>
-<<<<<<< HEAD
                                             <textarea class='form__content' placeholder='說什麼啦！' name='content' rows='6' cols='50'></textarea>
-=======
-                                            <textarea class='form__content' placeholder='說什麼啦！' name='content' rows='10' cols='50'></textarea>
->>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
                                         </div>
                                     </div>
                                         <input class="btn" type="submit" value="提交">
@@ -95,7 +71,6 @@ $(document).ready(function() {
                         </div>
                     </div>
                 `)
-<<<<<<< HEAD
             } else if(res.result === 'sub success') {
                 $(e.target).closest('.sub-comments').prepend(`
                     <div class="sub-comment">
@@ -105,32 +80,14 @@ $(document).ready(function() {
                                 <div class='delete-comment btn dele__btn--sub' data-id='${res.id}'>X</div>
                                 <div class='edit-comment'>
                                     <form name='edit__form' method='GET'>
-=======
-            }
-            if(res.result === 'sub success') {
-                $('.sub-comments').prepend(`
-                    <div class="sub-comment">
-                        <div class="sub-comment__top">
-                            <div class="sub-comment__author">作者：${escapeHtml(res.nickname)}</div>
-
-                            <div class="functional">
-                                <div class='delete-comment btn dele__btn--sub' data-id='$id'>X</div>
-                                <div class='edit-comment'>
-                                    <form method='GET' action='./edit_comment.php'>
->>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
                                         <input type='hidden' name='id' value='${res.id}'>
                                         <input class='btn dele__btn--sub' type='submit' value='EDIT'>
                                     </form>
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
                         <div class="comment__time sub-comment__time">發言時間：${res.created_at}</div>
                         <div class="comment__content">${escapeHtml(content)}</div>
-=======
-                        <div class="sub-comment__time">發言時間：${res.created_at}</div>
-                        <div class="sub-comment__content">${escapeHtml(content)}</div>
->>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
                     </div>
                 `)
             }
@@ -138,7 +95,6 @@ $(document).ready(function() {
             alert('你的留言跟公投一樣失敗。')
         })
     })
-<<<<<<< HEAD
     $('.container').on('submit', 'form[name="edit__form"]',function(e) {
         e.preventDefault()
         $(e.target).parent().parent().hide()
@@ -183,8 +139,6 @@ $(document).ready(function() {
 
 
     })
-=======
->>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
 })
 function escapeHtml(unsafe) {
     return unsafe
@@ -193,9 +147,5 @@ function escapeHtml(unsafe) {
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
-<<<<<<< HEAD
 }
 
-=======
-}
->>>>>>> 99f60cd44e492801c390b486aa805d9748a3adf5
