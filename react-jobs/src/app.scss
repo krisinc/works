@@ -1,0 +1,102 @@
+$color-primary: rgb(252, 114, 76);
+$color-primary-light: rgb(245, 164, 141);
+$color-secondary: rgb(94, 189, 75);
+$color-white: #eee;
+$color-black: #333;
+
+$default-font-size: 1.6rem;
+
+
+@mixin center {
+    right: 50%;
+    margin: auto;
+}
+@mixin link($ph, $pw) {
+    padding: $ph $pw;
+    border: solid .1rem $color-primary;
+    border-radius: .5rem;
+    cursor: pointer;
+    color: $color-primary;
+    text-decoration: none;
+    transition: all .3s;
+    &:hover {
+        border: solid .1rem $color-secondary;
+        box-shadow: 0 1rem 2rem rgba($color-black,.2);
+        color: $color-secondary;
+        transform: translateY(-3px);
+    }
+}
+
+body, html {
+    font-size: 62.5%; //1 rem = 10rem; 10rem/16px = 62.5%
+
+    background-color: $color-white;
+    color: $color-black;
+    box-sizing: border-box;
+    position: relative;
+    
+}
+
+.app {
+    text-align: center;
+
+
+    &__title {
+        font-size: 3.5rem;
+    }
+}
+
+.nav {
+    font-size: $default-font-size;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 40rem;
+    margin-bottom: 2rem;
+    &__item {
+        @include link(1rem, 3rem);
+    }
+}
+
+.job {
+    width: 76.8rem;
+    @include center();
+    border: solid .1rem $color-black;
+    box-shadow: 0 1rem 1.5rem rgba($color-black,.2);
+
+
+    & ~ .job {
+        margin-top: 3rem;
+    }
+
+    &__title {
+        font-size: 3rem;
+        margin: 0rem;
+        margin-top: 2rem;
+    }
+    &__break {
+        @include center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        width: 50%;
+        border: solid 2px $color-primary-light;
+    }
+    &__content {
+        font-size: $default-font-size;
+        margin: 1rem;
+        white-space: pre-line;
+        letter-spacing: 2px;
+        line-height: 30px;
+    }
+    &__salary {
+        font-size: $default-font-size;
+
+        margin-top: 0rem;
+        margin-bottom: 2rem;
+    }
+    &__link {
+        font-size: $default-font-size;
+        display: inline-block;
+        margin-bottom: 2rem;
+        @include link(1rem, 2rem);
+    }
+}
