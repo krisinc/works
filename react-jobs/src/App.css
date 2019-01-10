@@ -1,0 +1,77 @@
+body, html {
+  font-size: 62.5%;
+  background-color: #eee;
+  color: #333;
+  box-sizing: border-box;
+  position: relative; }
+
+.app {
+  text-align: center; }
+  .app__title {
+    font-size: 3.5rem; }
+
+.nav {
+  font-size: 1.6rem;
+  display: inline-flex;
+  justify-content: space-around;
+  width: 40rem;
+  margin-bottom: 2rem; }
+  .nav__item {
+    padding: 1rem 3rem;
+    border: solid 0.1rem #fc724c;
+    border-radius: .5rem;
+    cursor: pointer;
+    color: #fc724c;
+    text-decoration: none;
+    transition: all .3s; }
+    .nav__item:hover {
+      border: solid 0.1rem #5ebd4b;
+      box-shadow: 0 1rem 2rem rgba(51, 51, 51, 0.2);
+      color: #5ebd4b;
+      transform: translateY(-3px); }
+
+.job {
+  width: 76.8rem;
+  right: 50%;
+  margin: auto;
+  border: solid 0.1rem #333;
+  box-shadow: 0 1rem 1.5rem rgba(51, 51, 51, 0.2); }
+  .job ~ .job {
+    margin-top: 3rem; }
+  .job__title {
+    font-size: 3rem;
+    margin: 0rem;
+    margin-top: 2rem; }
+  .job__break {
+    right: 50%;
+    margin: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 50%;
+    border: solid 2px #f5a48d; }
+  .job__content {
+    font-size: 1.6rem;
+    margin: 1rem;
+    white-space: pre-line;
+    letter-spacing: 2px;
+    line-height: 30px; }
+  .job__salary {
+    font-size: 1.6rem;
+    margin-top: 0rem;
+    margin-bottom: 2rem; }
+  .job__link {
+    font-size: 1.6rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding: 1rem 2rem;
+    border: solid 0.1rem #fc724c;
+    border-radius: .5rem;
+    cursor: pointer;
+    color: #fc724c;
+    text-decoration: none;
+    transition: all .3s; }
+    .job__link:hover {
+      border: solid 0.1rem #5ebd4b;
+      box-shadow: 0 1rem 2rem rgba(51, 51, 51, 0.2);
+      color: #5ebd4b;
+      transform: translateY(-3px); }
