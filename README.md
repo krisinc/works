@@ -10,4 +10,4 @@
 - [連結](http://mentor-program.co/krisinc/index.php)
 ## React blog實作
 #### react redux scss
-- [連結](https://krisinc.tw)
+- [連結](http://krisinc.tw)
